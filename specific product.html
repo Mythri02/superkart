@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SuperKart - Shopping Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://imgs.search.brave.com/UwtJt_wuTvXJkZO1zpyMfhCRXyl0Bgl3Zzkwft5Igsk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzQ4LzU0Lzg5/LzM2MF9GXzI0ODU0/ODkzMF83WnRUNVZM/VXJUSEJIcTR3TFRq/dFR3MTZBb3RkTDFn/SS5qcGc" type="image/x-icon">
+    
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+      .header {
+        background: linear-gradient(90deg, #ff8c00, #ff4500);
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 30px;
+        align-items: center;
+      }
+      .navbar {
+        background: #333;
+        padding: 10px;
+      }
+      .navbar ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+      }
+      .navbar ul li {
+        margin: 0 15px;
+      }
+      .navbar ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+      }
+      .product-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        padding: 20px;
+      }
+      .product-card {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        text-align: center;
+        transition: transform 0.3s;
+      }
+      .product-card:hover {
+        transform: scale(1.05);
+      }
+      .footer {
+        background: #222;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>SuperKart <i><b></b></i></h1> 
+      
+        
+      
+      <img src="https://imgs.search.brave.com/UwtJt_wuTvXJkZO1zpyMfhCRXyl0Bgl3Zzkwft5Igsk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzQ4LzU0Lzg5/LzM2MF9GXzI0ODU0/ODkzMF83WnRUNVZM/VXJUSEJIcTR3TFRq/dFR3MTZBb3RkTDFn/SS5qcGc" alt="" width= 150 height = 150 > 
+    </header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <main>
+      <section class="product-list" id="products">
+        <h2 style="text-align: center;">Our Products</h2>
+        <div class="product-container" id="productContainer"></div>
+      </section>
+    </main>
+    <footer class="footer">
+      <p>&copy; 2025 SuperKart. All rights reserved.</p>
+    </footer>
+    <script>
+      const products = [
+        { name: "Laptop", price: 50000, image: "" },
+        { name: "Smartphone", price: 20000, image: "" },
+        { name: "Headphones", price: 3000, image: "" },
+        { name: "Smartwatch", price: 8000, image: "" },
+        { name: "Camera", price: 45000, image: "" },
+        { name: "Tablet", price: 25000, image: "" },
+        { name: "Monitor", price: 15000, image: "" },
+        { name: "Keyboard", price: 2000, image: "" },
+        { name: "Mouse", price: 1000, image: "" },
+        { name: "Speakers", price: 5000, image: "" },
+        { name: "Gaming Console", price: 40000, image: "" },
+        { name: "VR Headset", price: 25000, image: "" },
+        { name: "Fitness Band", price: 5000, image: "" },
+        { name: "Drone", price: 60000, image: "" },
+        { name: "Portable Hard Drive", price: 7000, image: "" }
+      ];
+      
+      const productContainer = document.getElementById("productContainer");
+      
+      products.forEach(product => {
+        const productCard = document.createElement("div");
+        productCard.classList.add("product-card");
+        productCard.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" width="150" height="150" />
+          <h3>${product.name}</h3>
+          <p>&#8377; ${product.price.toLocaleString()}</p>
+        `;
+        productContainer.appendChild(productCard);
+      });
+    </script>
+  </body>
+</html>
