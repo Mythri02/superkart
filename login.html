@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="https://imgs.search.brave.com/UwtJt_wuTvXJkZO1zpyMfhCRXyl0Bgl3Zzkwft5Igsk/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAyLzQ4LzU0Lzg5/LzM2MF9GXzI0ODU0/ODkzMF83WnRUNVZM/VXJUSEJIcTR3TFRq/dFR3MTZBb3RkTDFn/SS5qcGc" type="image/x-icon">
+    <title>SuperKart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        label {
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: calc(100% - 24px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .toggle-password {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+        }
+
+        .toggle-password img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .forget-password {
+            margin-bottom: 20px;
+            text-align: right;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        
+        <!-- Redirects to 1.html -->
+        <form action="1.html" method="get">
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" required>
+                    <span id="togglePassword" class="toggle-password">
+                        <img src="https://imgs.search.brave.com/db6wGMz6oK7d0D0BndagYGN7U8L3nu2s1sxjS34DLmE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzAwLzAyLzE5/LzM2MF9GXzUwMDAy/MTk5N19hVnZVR3Nu/Wlk5TzJXUEJKY2xQ/enZWc1dXM3Noc0oy/WC5qcGc" alt="Show/Hide Password">
+                    </span>
+                </div>
+            </div>
+            <div class="forget-password">
+                <a href="/forgot-password">Forgot Password?</a>
+            </div>
+            
+            <!-- When clicked, redirects to 1.html -->
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('togglePassword').addEventListener('click', function (e) {
+            const password = document.getElementById('password');
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            const imgSrc = type === 'password' 
+                ? 'https://imgs.search.brave.com/db6wGMz6oK7d0D0BndagYGN7U8L3nu2s1sxjS34DLmE/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzA1LzAwLzAyLzE5/LzM2MF9GXzUwMDAy/MTk5N19hVnZVR3Nu/Wlk5TzJXUEJKY2xQ/enZWc1dXM3Noc0oy/WC5qcGc' 
+                : 'https://imgs.search.brave.com/uf4ThCJdi5sIpFc7TsbBMtIKY9bXs_XfPmqOk2ZupPI/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4x/Lmljb25maW5kZXIu/Y29tL2RhdGEvaWNv/bnMvaGF3Y29ucy8z/Mi82OTg0MjUtaWNv/bi0yMS1leWUtaGlk/ZGVuLTUxMi5wbmc';
+            this.querySelector('img').setAttribute('src', imgSrc);
+        });
+    </script>
+</body>
+</html>
