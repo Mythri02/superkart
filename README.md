@@ -1,1 +1,9 @@
-The 1.html file is the static website code and the  login html is the login page
+# E-commerce Website Project
+
+## Setup Instructions
+
+1. Run `npm install`
+2. Configure MongoDB in `.env`
+3. Run `node backend/app.js`
+
+Enjoy!
